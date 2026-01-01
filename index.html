@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <font color : blue ><title>Happy New Year </title> </font>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #000428, #004e92);
+            color: white;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 3.5em;
+            margin-top: 20px;
+            text-shadow: 4px 4px 8px #000;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        h2 {
+            font-size: 4.5em;
+            margin-top: 20px;
+            text-shadow: 4px 4px 8px #3924fc;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        p {
+            font-size: 1.5em;
+            margin-top: 10px;
+            animation: fadeIn 3s ease-in-out infinite alternate;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        
+        .lantern {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background: radial-gradient(circle, #ffcc00, #ff6600);
+            border-radius: 10px;
+            box-shadow: 0 0 15px #ff6600, 0 0 30px #ff6600;
+            animation: floatLantern 10s linear infinite;
+        }
+        .lantern::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 10px;
+            height: 15px;
+            background: #ff3300;
+            transform: translateX(-50%);
+            border-radius: 50%;
+        }
+
+    
+        .cracker {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 10px yellow, 0 0 20px orange;
+            animation: burst 1.5s infinite ease-out;
+        }
+
+        
+        @keyframes floatLantern {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10%) translateX(calc(20px - 40px * random()));
+                opacity: 0;
+            }
+        }
+
+        @keyframes burst {
+            0% {
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            }
+            100% {
+                text-shadow: 0 0 20px #ff0000, 0 0 30px #ff6600, 0 0 40px #ff3300;
+            }
+        }
+       
+
+        .cracker {
+            position: absolute;
+            bottom: 0;
+            width: 4px;
+            height: 100px;
+            background: linear-gradient(to bottom, #fff, transparent);
+            animation: shoot 2s infinite ease-in-out;
+        }
+
+        .burst {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, rgb(78, 2, 2), rgb(8, 228, 26), rgb(10, 61, 201), transparent);
+            border-radius: 50%;
+            animation: explode 1s infinite ease-in-out;
+            opacity: 0;
+        }
+
+        @keyframes shoot {
+            0% {
+                transform: translateY(0);
+            }
+            90% {
+                transform: translateY(-80vh);
+            }
+            100% {
+                transform: translateY(-80vh);
+                opacity: 0;
+            }
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            70% {
+                transform: scale(3);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>🎇 Happy New Year <span id="year"></span>! 🎇</h1>
+    <h2> Wish you happy new year  friends</h2>
+    <p>Wishing you joy, peace, and success in the coming year!</p>
+   
+   <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById("year").textContent = currentYear;
+       document.getElementById("year-footer").textContent = currentYear;
+   </script>
+
+    <footer>&copy; <span id="year-footer"></span> happy new year friends</footer>
+    <div class="cracker" style="left: 40%; animation-delay: 0s;"></div>
+    <div class="cracker" style="left: 60%; animation-delay: 0.2s;"></div>
+
+    <div class="burst" style="left: 40%; top: 20%; animation-delay: 0.8s;"></div>
+    <div class="burst" style="left: 60%; top: 15%; animation-delay: 1s;"></div>
+   
+    <div class="cracker" style="left: 40%; animation-delay: 0s;"></div>
+    <div class="cracker" style="left: 60%; animation-delay: 0.2s;"></div>
+
+    <div class="burst" style="left: 40%; top: 20%; animation-delay: 0.8s;"></div>
+    <div class="burst" style="left: 60%; top: 15%; animation-delay: 1s;"></div>
+   
+    <div class="lantern" style="left: 20%; animation-delay: 0s;"></div>
+    <div class="lantern" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="lantern" style="left: 80%; animation-delay: 4s;"></div>
+    <div class="lantern" style="left: 20%; animation-delay: 0s;"></div>
+    <div class="lantern" style="left: 20%; animation-delay: 0s;"></div>
+    <div class="lantern" style="left: 20%; animation-delay: 0s;"></div>
+  
+    <div class="cracker" style="top: 50%; left: 30%; animation-delay: 0s;"></div>
+    <div class="cracker" style="top: 40%; left: 60%; animation-delay: 0.5s;"></div>
+    <div class="cracker" style="top: 70%; left: 20%; animation-delay: 1s;"></div>
+    <div class="cracker" style="top: 30%; left: 70%; animation-delay: 1.5s;"></div>
+    <div class="cracker" style="top: 30%; left: 70%; animation-delay: 1.5s;"></div>
+</body>
+</html> 
